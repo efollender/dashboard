@@ -9,4 +9,4 @@ if (module.hot) {
   module.hot.accept();
 }
 
-render(<App initialCount={0}/>, mount);
+render(<App/>, mount);

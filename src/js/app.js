@@ -1,18 +1,16 @@
 import React, {Component, PropTypes} from 'react';
+import Expense from './components/Expense';
 
 export default class App extends React.Component {
-	static propTypes = {
-		initialCount: PropTypes.number
-	}
 	constructor(props) {
 		super(props);
-		this.state = {
-			count: props.initialCount
-		};
+		this.state = {};
 	}
 	render() {
 		return (
-			<div>Hello! Hi</div>
+			<div>
+				<Expense/>
+			</div>
 		);
 	}
 }

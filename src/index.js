@@ -5,4 +5,8 @@ import './stylus/index.styl';
 
 const mount = document.getElementById('app');
 
-render(<App/>, mount);
+if (module.hot) {
+  module.hot.accept();
+}
+
+render(<App initialCount={0}/>, mount);

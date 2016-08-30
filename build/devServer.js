@@ -13,7 +13,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
     colors: true
   },
   historyApiFallback: true,
-  publicPath: '/',
+  publicPath: config.output.publicPath,
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));

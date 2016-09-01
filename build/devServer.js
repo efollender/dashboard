@@ -17,11 +17,10 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-
+app.use(express.static('public'));
 app.listen(PORT, 'localhost', function onStart(err) {
   if (err) {
     process.exit(0);
   }
   console.log('Listening at http://localhost:%s', PORT);
 });
-app.use(express.static('public'));

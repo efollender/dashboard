@@ -1,8 +1,8 @@
 import {Map, List, fromJS} from 'immutable';
 import {expect} from 'chai';
-
-import reducer from '../src/js/reducer';
-import * as type from '../src/js/constants';
+import * as harvestActions from '../src/js/actionCreators/harvestActions';
+import reducer from '../src/js/reducers/harvestReducer';
+import {HARVEST} from '../src/js/constants';
 
 const initialState = Map({
 				expenses: List.of(
@@ -20,10 +20,14 @@ const initialState = Map({
 			});
 
 describe('reducer', () => {
+	it('has an initial state', () => {
+		const nextState = reducer();
+
+		expect(nextState).to.be.ok;
+	});
 	it('handles GET_TOTAL', () => {
 
-		const action = {type: type.GET_TOTAL};
-		const nextState = reducer(initialState, action);
+		const nextState = reducer(initialState, harvestActions.total());
 
 		expect(nextState).to.equal(Map({ 
 			expenses: List.of(
@@ -44,14 +48,11 @@ describe('reducer', () => {
 	});
 
 	it('handles ADD_EXPENSE', () => {
-		const action = {
-			type: type.ADD_EXPENSE,
-			data: Map({
+		const action = harvestActions.addExpense(Map({
 				total: 20.41,
 				title: 'Supplies',
 				billable: true
-			})
-		};
+			}));
 		const nextState = reducer(initialState, action);
 		expect(nextState).to.equal(Map({
 				expenses: List.of(

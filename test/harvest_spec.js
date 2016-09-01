@@ -3,7 +3,7 @@ import {List, Map} from 'immutable';
 import {
 	addExpense,
 	total
-} from '../src/js/harvest';
+} from '../src/js/actions/harvest';
 
 const state = Map({
 				expenses: List.of(

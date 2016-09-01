@@ -1,15 +1,10 @@
 import React, {Component, PropTypes} from 'react';
-import Expense from './components/Expense';
 
-export default class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+export default class App extends Component {
 	render() {
 		return (
 			<div>
-				<Expense/>
+				{this.props.children}
 			</div>
 		);
 	}

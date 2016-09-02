@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {Map, List} from 'immutable';
+import {List} from 'immutable';
 import * as actionCreators from '../actionCreators/harvestActions';
 
 const mapStateToProps = state => {
@@ -18,12 +18,6 @@ class Expense extends Component {
 		expenses: PropTypes.instanceOf(List),
 		expenseTotal: PropTypes.number
 	};
-	componentDidMount() {
-		const {location} = this.props;
-		if (location.query.access_token) {
-			console.log('access', location.query.access_token);
-		}
-	}
 	render() {
 		const {
 			expenses,
@@ -33,20 +27,39 @@ class Expense extends Component {
 		return (
 			<div className="expense-container">
 				<Link to="login">login!</Link>
-				{expenses.toJS().map(expense => {
+				<div>
+				{expenses.toJS().map((expense, index) => {
 					return (
-						<p key={expense.total}>
-						{expense.title}: {expense.total}
+						<p
+							key={expense.total}>
+							{expense.title}: {expense.total}
 						</p>
 					)
 				})}
+				
 				<button onClick={total}>Get total</button>
+				
 				{expenseTotal &&
 					<p>{expenseTotal}</p>
 				}
+				</div>
 			</div>
 		);
 	}
 }
 
-export default connect(mapStateToProps, actionCreators)(Expense);
+class ExpenseContainer extends Component {
+	static propTypes = {
+		addExpense: PropTypes.func,
+		total: PropTypes.func,
+		expenses: PropTypes.instanceOf(List),
+		expenseTotal: PropTypes.number
+	};
+	render() {
+		return (
+			<Expense {...this.props}/>
+		)
+	}
+}
+
+export default connect(mapStateToProps, actionCreators)(ExpenseContainer);

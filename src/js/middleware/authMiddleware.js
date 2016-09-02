@@ -1,3 +1,3 @@
-export default state => next => action => {
-	console.log(state);
+export default store => next => action => {
+	return next(action);
 } 

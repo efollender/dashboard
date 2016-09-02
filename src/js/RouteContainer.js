@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import {Router, hashHistory} from 'react-router';
+import {Router, browserHistory} from 'react-router';
 import routes from './routes';
 
 export default class RouteContainer extends Component {
@@ -17,7 +17,7 @@ export default class RouteContainer extends Component {
 		return (
 			<Router
 				routes={routes}
-				history={hashHistory}/>
+				history={browserHistory}/>
 		);
 	}
 }

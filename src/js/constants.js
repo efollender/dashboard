@@ -2,7 +2,9 @@ import {Map, List} from 'immutable';
 
 export const AUTH = {
 	INITIAL_STATE: Map({
-		user: null
+		user: null,
+		token: null,
+		isAuthenticated: false
 	}),
 	SET_TOKEN: 'auth/SET_TOKEN',
 	SET_USER: 'auth/SET_USER',

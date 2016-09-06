@@ -19,7 +19,7 @@ const initialState = Map({
 				)
 			});
 
-describe('reducer', () => {
+describe('Harvest reducer', () => {
 	it('has an initial state', () => {
 		const nextState = reducer();
 

@@ -1,0 +1,19 @@
+{
+  "harvest": {
+    "subdomain": "brooklynunited",
+    "email": "...",
+    "password": "...",
+    "identifier": "Rqe4-51w8itszf0oLFA6Wg",
+    "secret": "EpGNeSmdicIyj_tNNzEjZvEfBoHEj3YR3hKIJUACsTeT01MuP2CbT32G0TnyIYme7x3ckpfg0habuchrZt_bpA",
+    "user_agent": "node-harvest test runner",
+    "redirect_uri": "http://localhost:4001"
+  },
+  "google": {
+  	"client_id": "788363472775-525lfv1k2t0b7lm195chda485k731bid.apps.googleusercontent.com",
+  	"client_secret": "sAi9OLWryqT1d_E6Tcp_XP8P"
+  },
+  "github": {
+  	"client_id": "0b9886e5bc18fb287959",
+  	"client_secret": "749df43bb3546e32b92c727f25e61a90e776ae32"
+  }
+}

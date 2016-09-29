@@ -77,6 +77,12 @@ module.exports = {
   stylus: {
     use: [require('nib')(), require('rupture')()]
   },
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  },
   plugins: [
     // new webpack.NoErrorsPlugin(),
     new WriteStatsPlugin(

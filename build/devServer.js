@@ -19,7 +19,9 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
+
 app.use(express.static('public'));
+
 app.get('*', function (request, response){
   response.sendFile(resolve('public', 'index.html'))
 });
